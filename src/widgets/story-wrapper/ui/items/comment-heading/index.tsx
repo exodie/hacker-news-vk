@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FC, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { Icon24Comment } from '@vkontakte/icons'
@@ -15,15 +15,13 @@ interface Props {
   storyId: number
 }
 
-export const CommentsHeading = (props: Props) => {
-  const { comments, storyId } = props
-
+export const CommentsHeading: FC<Props> = ({ comments, storyId }) => {
   const [isLoading, setIsLoading] = useState(false)
   const dispatch = useDispatch()
 
   async function updateComments() {
     setIsLoading(true)
-    
+
     const updatedStory = await updateStoryById(storyId)
     dispatch(set(updatedStory))
 

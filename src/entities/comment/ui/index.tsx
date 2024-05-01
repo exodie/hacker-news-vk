@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FC, useState } from 'react'
 
 import { Card } from '@vkontakte/vkui'
 
@@ -6,8 +6,8 @@ import styles from './index.module.scss'
 
 import { CommentHeader } from './header'
 import { CommentReplies } from './replies'
-import { CommentText } from './text'
 import { OpenReplies } from './show-replies'
+import { CommentText } from './text'
 
 import { CommentType } from '@/entities'
 
@@ -15,9 +15,7 @@ interface Props {
   comment: CommentType
 }
 
-export const CommentCard = (props: Props) => {
-  const { comment } = props
-
+export const CommentCard: FC<Props> = ({ comment }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const [loadComments, setLoadComments] = useState<CommentType[]>([])

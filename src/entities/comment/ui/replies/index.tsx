@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import styles from './index.module.scss'
 
 import { CommentHeader } from '../header'
@@ -9,9 +11,7 @@ interface Props {
   loadComments: CommentType[]
 }
 
-export const CommentReplies = (props: Props) => {
-  const { loadComments } = props
-
+export const CommentReplies: FC<Props> = ({ loadComments }) => {
   return (
     <>
       {loadComments.map((comment) => (

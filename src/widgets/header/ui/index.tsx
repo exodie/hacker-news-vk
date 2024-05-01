@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { Icon28ArrowLeftOutline, Icon28BugOutline } from '@vkontakte/icons'
@@ -12,9 +13,7 @@ interface Props {
   nav?: string
 }
 
-export const Header = (props: Props) => {
-  const { nav } = props
-
+export const Header: FC<Props> = ({ nav }) => {
   const router = useRouteNavigator()
 
   const dispatch = useDispatch()

@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import { Icon28User } from '@vkontakte/icons'
 import { Text } from '@vkontakte/vkui'
 
@@ -10,9 +12,7 @@ interface Props {
   time: number
 }
 
-export const StoryHeader = (props: Props) => {
-  const { by, time } = props
-
+export const StoryHeader: FC<Props> = ({ by, time }) => {
   return (
     <header className={styles.header}>
       <Icon28User></Icon28User>

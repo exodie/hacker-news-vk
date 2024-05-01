@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import { Div } from '@vkontakte/vkui'
 
 import styles from './index.module.scss'
@@ -12,9 +14,7 @@ interface Props {
   story: StoryType
 }
 
-export const StoryContent = (props: Props) => {
-  const { story } = props
-
+export const StoryContent: FC<Props> = ({ story }) => {
   return (
     <Div className={styles.content}>
       <StoryHeader by={story.by} time={story.time} />

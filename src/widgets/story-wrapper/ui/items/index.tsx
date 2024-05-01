@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import styles from './index.module.scss'
 
 import { CommentsList } from '@/features/comments-list'
@@ -12,9 +14,7 @@ interface Props {
   fullStory: StoryCommentType
 }
 
-export const StoryItem = (props: Props) => {
-  const { fullStory } = props
-
+export const StoryItem: FC<Props> = ({ fullStory }) => {
   return (
     <div className={styles.wrapper}>
       <StoryItemAside url={fullStory.url} />

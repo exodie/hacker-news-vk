@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import { Spinner } from '@vkontakte/vkui'
 
 import styles from './index.module.scss'
@@ -6,9 +8,7 @@ interface Props {
   count: number
 }
 
-export const Skeleton = (props: Props) => {
-  const { count } = props
-
+export const Skeleton: FC<Props> = ({ count }) => {
   return (
     <>
       {[

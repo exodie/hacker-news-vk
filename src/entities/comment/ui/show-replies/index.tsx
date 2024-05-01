@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react'
+import { Dispatch, FC, SetStateAction, useState } from 'react'
 
 import { Button, IconButton, Spinner, Text } from '@vkontakte/vkui'
 
@@ -14,9 +14,13 @@ interface Props {
   isOpen: boolean
 }
 
-export const OpenReplies = (props: Props) => {
-  const { kids, setLoadComments, loadComments, setIsOpen, isOpen } = props
-
+export const OpenReplies: FC<Props> = ({
+  kids,
+  setLoadComments,
+  loadComments,
+  setIsOpen,
+  isOpen
+}) => {
   const [isLoading, setIsLoading] = useState(false)
 
   async function loadReplyComments() {
@@ -50,8 +54,8 @@ export const OpenReplies = (props: Props) => {
               }}
             >
               {!isLoading ? (
-                <Button mode='tertiary' size='m'>
-                  <Text aria-label='Показать ответы'>
+                <Button mode="tertiary" size="m">
+                  <Text aria-label="Показать ответы">
                     Показать ответы ({kids.length})
                   </Text>
                 </Button>
@@ -61,8 +65,8 @@ export const OpenReplies = (props: Props) => {
             </IconButton>
           ) : (
             <IconButton className={styles.show} onClick={() => toggleReplyComments()}>
-              <Button mode='tertiary' size='m'>
-                <Text aria-label='Скрыть ответы'>Скрыть ответы ({kids.length})</Text>
+              <Button mode="tertiary" size="m">
+                <Text aria-label="Скрыть ответы">Скрыть ответы ({kids.length})</Text>
               </Button>
             </IconButton>
           )}

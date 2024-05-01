@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import { Text } from '@vkontakte/vkui'
 
 import styles from './index.module.scss'
@@ -6,12 +8,10 @@ interface Props {
   text: string
 }
 
-export const CommentText = (props: Props) => {
-  const { text } = props
-
+export const CommentText: FC<Props> = ({ text }) => {
   return (
     <section className={styles.body}>
-      <Text style={{ maxWidth: "100%" }}>{text}</Text>
+      <Text className={styles.text}>{text}</Text>
     </section>
   )
 }

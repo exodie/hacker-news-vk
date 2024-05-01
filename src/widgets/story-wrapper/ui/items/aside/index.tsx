@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import { Icon16Linked } from '@vkontakte/icons'
 import { Link, Title } from '@vkontakte/vkui'
 
@@ -7,9 +9,7 @@ interface Props {
   url: string
 }
 
-export const StoryItemAside = (props: Props) => {
-  const { url } = props
-
+export const StoryItemAside: FC<Props> = ({ url }) => {
   return (
     <div className={styles.aside}>
       <Title className={styles.title}>Новость</Title>
