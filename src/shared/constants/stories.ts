@@ -1,0 +1,2 @@
+export const COUNT_STORIES = 100
+export const TIMEOUT_UPDATE_STORIES = 60000
